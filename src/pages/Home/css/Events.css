@@ -9,13 +9,32 @@
 }
 
 .events .events-header{
-    position: sticky;
-    top:50%;
-
+    width: 100%;
     height: 150vh;
+
+    padding-top: 30vh;
 }
 
 .events .events-header h1{
+    position: sticky;
+    top: 50%;
+    transform: translateY(-50%);
+
+    /* writing-mode: vertical-rl; */
+
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    /* border-style: dotted; */
+
+    background-image: 
+    url("https://cdn.dribbble.com/users/1770290/screenshots/6164788/bg_76.gif");
+    background-size: 110% auto;
+    background-position: center;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+
 }
 
 .events .events-body{
@@ -37,17 +56,30 @@
     align-items: center;
 }
 .events .events-body .event:nth-child(1){
-    background-color: aquamarine;
+    background: linear-gradient(45deg, #72b662ff,#3899ceff);
+
     height: 100vh;
     top: calc(0% + var(--events-spacing));
 }
 .events .events-body .event:nth-child(2){
-    background-color: rebeccapurple;
+    background: linear-gradient(45deg, #567b8eff,#2b3246ff);
     height: 97vh;
     top: calc(3% + var(--events-spacing));
 }
 .events .events-body .event:nth-child(3){
-    background-color: rgb(255, 177, 167);
+    background: linear-gradient(45deg, #57a1bcff,#264d68ff);
     height: 94vh;
     top: calc(6% + var(--events-spacing));
+}
+
+@keyframes animateGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
