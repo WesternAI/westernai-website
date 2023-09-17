@@ -1,0 +1,60 @@
+/* landing section START --=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
+.home_page .landing{
+    position: relative;
+    height: 100vh;
+    /* display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+}
+
+.home_page .landing .landing-bg{
+    position: absolute;
+    /* z-index: -10; */
+    width: 100%;
+    height:100%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* background: linear-gradient(45deg, #7998DD,#8E72E1); */
+}
+
+.home_page .landing .landing-bg .landing-bg-content{
+    position: relative;
+    width: 80vw;
+    height: 10vh;
+}
+
+.home_page .landing .landing-bg .landing-bg-content h1{
+    font-size: 15vw;
+
+    /* width:0; */
+    font-weight: 500;
+    /* background: -webkit-linear-gradient(45deg, #7998DD,#8E72E1); */
+    /* -webkit-background-clip: text; */
+    /* -webkit-text-fill-color: transparent; */
+    /* use random url background image */
+    /* background: url('https://source.unsplash.com/random/1920x1080') no-repeat center center/cover; */
+    background-image: 
+    url("https://cdn.dribbble.com/users/1770290/screenshots/6164788/bg_76.gif");
+    background-size: 110% auto;
+    background-position: center;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    
+    position: absolute;
+    transform: translate(-50%, -50%);
+
+    top: 50%;
+    left: 50%;
+    
+    z-index: 100;
+
+    pointer-events: none;
+}
+
+/* landing section END --=-=-=-=-=-=-=-=-=-=-=-=-=-=- */

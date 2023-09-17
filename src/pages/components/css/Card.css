@@ -1,0 +1,52 @@
+/* all css will be warapped around */
+/* .cardz{} */
+.cardz{
+    height: 50vh;
+    aspect-ratio: 5/9;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.cardz *{
+    transition: 0.3s var(--transition);
+}
+
+.cardz .top{
+    /* border-style:dotted; */
+    height: 100%;
+    /* aspect-ratio: 1/1; */
+    border-radius: var(--border-radius);
+    
+    background-color: rgba(var(--colour-secondary), 0.7);
+
+    backdrop-filter: blur(10px);
+    
+    overflow-y: hidden;
+    /* border: 5px solid transparent; */
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.cardz .bottom{
+    aspect-ratio: 2/1;
+    width: 100%;
+
+    margin-top: 5px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    border-radius: var(--border-radius);
+    background-color: rgba(var(--colour-secondary), 0.7);
+    
+    backdrop-filter: blur(10px);
+    transform: translateZ(50px);
+
+}

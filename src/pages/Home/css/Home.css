@@ -1,0 +1,14 @@
+/* all css is wrapped around this */
+/* .home_page {} */
+/* .home_page {} */
+
+.home_page {
+    display: flex;
+    flex-direction: column;
+    /* height:100vh; */
+    /* background-color: #000; */
+}
+
+.home_page * {
+    /* border-style: dotted; */
+}

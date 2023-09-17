@@ -1,0 +1,37 @@
+.carousel-container{
+    /* height: 60vh; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.carousel{
+    display: flex;
+
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+
+    padding: 0rem 50vw;
+
+    position: absolute;
+}
+
+.carousel .container {
+    /* snap scroll */
+    /* scroll-snap-align: center; */
+    /* scroll-snap-stop: always; */
+    
+    margin: 2rem;
+    /* transition: 0.2s var(--transition); */
+    /* border-radius: var(--border-radius); */
+    /* border: 5px solid rgb(var(--colour-primary)); */
+}
+
+.carousel .container:hover {
+    /* move slightly up */
+    /* margin: 1rem; */
+    /* transform: scale(1.1); */
+
+    /* border: 5px solid rgb(var(--inverse-primary)); */
+}

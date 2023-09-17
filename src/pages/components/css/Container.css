@@ -1,0 +1,16 @@
+.container {
+    padding: 5px;
+
+    /* position: absolute; */
+    
+    backdrop-filter: blur(5px);
+    
+    background-image: url("https://cdn.dribbble.com/users/1770290/screenshots/6164788/bg_76.gif");
+    background-size: cover;
+
+    border-radius: var(--border-radius);
+
+    /* margin: 1rem; */
+    /* transition: 0.2s var(--transition); */
+
+}
