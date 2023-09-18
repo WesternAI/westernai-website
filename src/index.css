@@ -9,7 +9,9 @@
 }
 
 html {
+    /* snap scroll maybe we keep this idk */
     /* scroll-snap-type: y mandatory; */
+
     scroll-behavior: smooth;
 }
 
@@ -69,7 +71,8 @@ body {
 /* scroll wheel css =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
 
 ::-webkit-scrollbar {
-    width: 15px;
+    width: 0;
+    /* width: 15px; */
     /* width: 100px; */
 }
 
@@ -92,4 +95,4 @@ body {
   ::-webkit-scrollbar-thumb:hover {
     /* background: #555; */
     opacity: 0.8;
-  }
+}

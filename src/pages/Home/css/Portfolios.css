@@ -10,6 +10,44 @@
 	height:100vh;
 }
 
+.portfolios .portfolios-title{
+	position: absolute;
+	top: 0;
+	
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	
+	/* text-transform: lowercase; */
+	text-align: center;
+}
+
+.portfolios .portfolios-title h1{
+	width: calc(100vw - 2rem);
+	
+	font-size: 3rem;
+	font-weight: 700;
+	
+	text-transform: lowercase;
+	text-align: center;
+	
+	background-image: 
+	url("https://cdn.dribbble.com/users/1770290/screenshots/6164788/bg_76.gif");
+	background-size: 110% auto;
+	background-position: center;
+	color: transparent;
+	-webkit-background-clip: text;
+	background-clip: text;
+}
+
+.portfolios .portfolios-title p{
+	width: calc(100vw - 2rem);
+	margin-top: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
 .portfolios .portfolio-card-container{
 	display: flex;
     flex-direction: column;

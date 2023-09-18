@@ -240,6 +240,10 @@ const Portfolios = () => {
                     <canvas id = "c"></canvas>
                 }
             /> */}
+            <div className="portfolios-title">
+                <h1>meet the executive team</h1>
+                <p>the people in charge of western ai</p>
+            </div>
 
             <div className="portfolio-bands">
                 <PageBand

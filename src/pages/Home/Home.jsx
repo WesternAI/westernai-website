@@ -9,7 +9,7 @@ import DarkModeButton from '../components/DarkModeButton';
 import Landing from './sections/Landing.jsx';
 import Events from './sections/Events.jsx';
 import Projects from './sections/Projects.jsx';
-import About from './sections/About.jsx';
+import Contact from './sections/Contact.jsx';
 import Portfolios from './sections/Portfolios.jsx';
 
 const Home = () => {
@@ -24,7 +24,7 @@ const Home = () => {
             <Portfolios />
             <Events />
             <Projects />
-            <About />
+            <Contact />
 
             {/* <TestButton /> */}
             <DarkModeButton />
