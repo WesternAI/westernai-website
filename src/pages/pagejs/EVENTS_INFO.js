@@ -7,7 +7,8 @@ const EVENTS_INFO = [
         date: '2021-01-01',
         description: 'This is the first event',
         data: {
-            prizes: [400, 250, 150],
+            // prizes: ['$400', '$250', '$150'],
+            prizes: [1,2,3],
             winners: ['Team 1', 'Team 2', 'Team 3'],
             metrics: [
 

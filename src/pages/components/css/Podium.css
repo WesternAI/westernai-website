@@ -42,8 +42,12 @@
 
 .pillar .pillar-ledge{
     width: 110%;
-    height: 10%;
+    aspect-ratio: 9/1;
     background-color: gainsboro;
+
+    /* background-image: url(https://cdn.dribbble.com/users/1770290/screenshots/6164788/bg_76.gif);
+    background-size: cover; */
+
     position: absolute;
     top: 0;
     transform: translateY(-50%);
