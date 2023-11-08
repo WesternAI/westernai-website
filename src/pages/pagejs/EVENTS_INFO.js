@@ -1,8 +1,18 @@
+import ainnovation from '../../assets/events/ainnovation-logo-colour.png'
+
 const EVENTS_INFO = [
     {
         title: 'AInnovation',
+        logo: ainnovation,
         date: '2021-01-01',
-        description: 'This is the first event'
+        description: 'This is the first event',
+        data: {
+            prizes: [400, 250, 150],
+            winners: ['Team 1', 'Team 2', 'Team 3'],
+            metrics: [
+
+            ]
+        },
     },
     {
         title: 'DataQuest',
