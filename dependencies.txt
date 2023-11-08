@@ -3,3 +3,5 @@ react-router-dom
 fluid-canvas
 
 vanilla-tilt
+
+react-confetti-explosion
