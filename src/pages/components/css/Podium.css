@@ -27,6 +27,8 @@
     transform: translate(0,0);
 
     transition: 0.4s ease-in;
+
+    cursor: pointer;
 }
 
 .podium .pillar .pillar-body{

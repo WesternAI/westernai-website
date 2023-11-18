@@ -1,0 +1,57 @@
+.contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+
+    /* border-style: dotted; */
+    transition: 0.4s var(--transition);
+    background-color: rgb(var(--colour-secondary));
+}
+.contact .contact-container{
+    /* border-style: dotted; */
+    transition: 0.4s var(--transition);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.contact .contact-container .social-media-link{
+    /* border-style: dotted; */
+    transition: 0.4s var(--transition);
+
+    margin:0 1rem;
+    aspect-ratio: 1/1;
+    width: 2rem;
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* invert the colour because icon defaults are white */
+    filter: invert(1);
+}
+
+.contact .social-media-link img{
+    width: 100%;
+    transition: 0.4s var(--transition);
+}
+
+.contact .contact-description{
+    background-image: 
+    url("https://cdn.dribbble.com/users/1770290/screenshots/6164788/bg_76.gif");
+    background-size: 110% auto;
+    background-position: center;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    font-size: 1.1rem;
+    font-weight: bold;
+
+    margin: 0.5rem;
+}

@@ -17,12 +17,21 @@ const COLOURS = {
     ]
 }
 
-const changeLogo = (theme) => {
+const changeIcons = (theme) => {
     const logo = document.querySelector('#nav-logo img')
+
+    const socialIcons = document.querySelectorAll('.social-media-link')
+
     if(theme === 0){
         logo.style.filter = 'invert(0)'
+        for(let ams = 0; ams < socialIcons.length; ams++){
+            socialIcons[ams].style.filter = 'invert(1)'
+        }
     } else {
         logo.style.filter = 'invert(1)'
+        for(let ams = 0; ams < socialIcons.length; ams++){
+            socialIcons[ams].style.filter = 'invert(0)'
+        }
     }
 }
 
@@ -50,7 +59,7 @@ const switchTheme = (choice = 'null') => {
 
 // changes the theme to light or dark (light = 1, dark = 0)
 const changeLightDark = (theme) => {
-    changeLogo(theme)
+    changeIcons(theme)
 
     for(let ams = 0; ams < STYLE_NAMES.length; ams++){
         const COLOUR = '--colour' + STYLE_NAMES[ams]

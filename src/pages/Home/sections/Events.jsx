@@ -15,6 +15,7 @@ const AInnovationEvent = () => {
     )
 }
 
+// create an individual event
 const Event = (event, custom) => {
     return (
         <div className="event">
