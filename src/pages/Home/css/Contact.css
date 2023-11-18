@@ -16,6 +16,7 @@
     flex-direction: row;
     align-items: center;
 
+
 }
 
 .contact .contact-container .social-media-link{
@@ -27,13 +28,19 @@
     width: 2rem;
     position: relative;
     overflow: hidden;
-
+    
     display: flex;
     justify-content: center;
     align-items: center;
 
     /* invert the colour because icon defaults are white */
     filter: invert(1);
+}
+
+.contact .contact-container .social-media-link:hover{
+    scale: 1.1;
+    transform: translateY(-10%);
+    transition: 0.4s ease;
 }
 
 .contact .social-media-link img{
@@ -52,6 +59,9 @@
 
     font-size: 1.1rem;
     font-weight: bold;
-
+    
     margin: 0.5rem;
+}
+.contact .club-info{
+    
 }
