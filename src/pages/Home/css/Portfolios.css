@@ -169,13 +169,13 @@
 }
 
 .portfolios .portfolio-card-title{
-	background-image: 
+	/* background-image: 
     url("https://cdn.dribbble.com/users/1770290/screenshots/6164788/bg_76.gif");
     background-size: 110% auto;
     background-position: center;
     color: transparent;
     -webkit-background-clip: text;
-    background-clip: text;
+    background-clip: text; */
 
 	font-size: 1.7rem;
 	font-weight: bold;

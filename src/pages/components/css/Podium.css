@@ -21,7 +21,7 @@
     /* border-style: dotted; */
 
     background-color: grey;
-    box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
     border-radius: var(--border-radius);
 
     transform: translate(0,0);
@@ -54,7 +54,7 @@
     top: 0;
     transform: translateY(-50%);
     border-radius: var(--border-radius);
-    box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
 }
 
 .podium .pillar .pillar-body .pillar-title{

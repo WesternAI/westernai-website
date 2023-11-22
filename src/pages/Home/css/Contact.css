@@ -61,7 +61,22 @@
     font-weight: bold;
     
     margin: 0.5rem;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
+
+.contact .contact-description .contact-communications{
+    transition: 0.4s ease;
+}
+
+.contact .contact-description .contact-communications:hover{
+    /* glowing effect */
+    text-shadow: 0 0 3px #fff;
+    transition: 0.4s ease;
+}
+
 .contact .club-info{
     
 }

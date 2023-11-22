@@ -23,10 +23,10 @@ const Contact = () => {
             </div>
 
             <div className="contact-description">
-                brought to you by the communications team
+                brought to you by the&nbsp;<a href className="contact-communications">communications</a>&nbsp;team
             </div>
             <div className="club-info">
-                @2023 Western Artificial Intelligence Club
+                @2024 Western Artificial Intelligence Club
             </div>
         </footer>
     )
