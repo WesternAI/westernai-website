@@ -1,0 +1,19 @@
+/* center a div */
+.ainnovation{
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* this is a test */
+.ainnovation .title{
+    font-size: 5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+    color: #d98cf5;
+    text-shadow: 0 0 10px #d98cf5;
+}
