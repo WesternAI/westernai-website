@@ -73,8 +73,10 @@
 
 .contact .contact-description .contact-communications:hover{
     /* glowing effect */
-    text-shadow: 0 0 3px #fff;
+    color: rgb(var(--inverse-primary));
+    transform: translateY(-10%);
     transition: 0.4s ease;
+    cursor: pointer;
 }
 
 .contact .club-info{
