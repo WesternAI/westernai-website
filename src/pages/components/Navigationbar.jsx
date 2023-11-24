@@ -112,6 +112,8 @@ const NavButton = (link, title) => {
 }
 
 
+
+
 const NavigationBar = () => {
     return (
         <nav className="nav-bar">
