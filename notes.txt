@@ -6,9 +6,6 @@ https://monopo.london/
 
 hi its judy!
 
-<<<<<<< HEAD
 hi it's Trinity!! :)
-=======
 
-yipee!
->>>>>>> 4be1242da01cd96194cb0675a01a389b7d7c515c
+hi this is Ken
