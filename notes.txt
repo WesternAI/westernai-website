@@ -8,4 +8,4 @@ hi its judy!
 
 hi it's Trinity!! :)
 
-hi this is Ken
+I'm learning about git
