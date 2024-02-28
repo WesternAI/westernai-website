@@ -14,7 +14,7 @@ import makeElementDraggable from '../../pagejs/makeDraggable';
 import tilt3d from '../../pagejs/tilt3d';
 import elementInViewPort from '../../pagejs/elementInViewPort';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const carousel = new Carousel('portfolio-carousel')
 
@@ -214,14 +214,17 @@ const __INIT__PORTFOLIO__ = () => {
 }
 
 window.addEventListener('load', () => {
+    // handleLoad()    
+})
 
+const handleLoad = () => {
     // initialize custom carousel
     carousel.initialize()
 
     // initialize portfolio section
     __INIT__PORTFOLIO__()
-    
-})
+
+}
 
 const Portfolios = () => {
     for(let i = 0; i < PORTFOLIO_INFO.length; i++) {
@@ -231,6 +234,10 @@ const Portfolios = () => {
         const card = portfolioCard(i, portfolio)
         carousel.addElement(card)
     }
+
+    useEffect(() => {
+        handleLoad()
+    }, [])
 
     return (
         <section className = 'portfolios' id = 'portfolios'>

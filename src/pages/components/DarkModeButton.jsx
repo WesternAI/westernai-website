@@ -3,6 +3,7 @@ import {switchTheme, isThemeDark} from "../pagejs/switchTheme";
 
 import Moon from '../../assets/moon.png'
 import Sun from '../../assets/sun.png'
+import { useEffect } from 'react';
 
 const switchButtonTheme = (theme) => {
     localStorage.setItem('wai-theme', theme)
@@ -27,9 +28,9 @@ const handleClick = (e) => {
 
 }
 
-window.addEventListener('load', () => {
+const handleLoad = () => {
     const darkModeButton = document.getElementById('dark-mode-button')
-
+    
     const initTheme = () => {
         const savedTheme = localStorage.getItem('wai-theme')
         if (savedTheme) {
@@ -41,11 +42,17 @@ window.addEventListener('load', () => {
             switchButtonTheme(0)
         }
     }
-
+    
     initTheme()
-})
+}
 
 const DarkModeButton = () => {
+
+    useEffect(() => {
+        handleLoad()
+    },[])
+
+
     return (
         <div id='dark-mode-button' onClick={handleClick}>
             <img src={Moon} id='dark-mode-img' />

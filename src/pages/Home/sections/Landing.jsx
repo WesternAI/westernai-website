@@ -1,11 +1,14 @@
 import '../css/Landing.css'
 
+import { useEffect } from 'react';
+
 // componenets
 import Container from '../../components/Container';
 
 // js
 import initializeFluid from '../../pagejs/fluidAnimationRe.js';
 import makeElementDraggable from '../../pagejs/makeDraggable';
+import userEvent from '@testing-library/user-event';
 
 // typewriter effect for the title
 var TxtType = function(el, toRotate, period) {
@@ -57,9 +60,10 @@ const handleLoad = () => {
 
 
 const Landing = () => {
-    window.addEventListener('load', () => {
+    useEffect(() => {
         handleLoad()
-    });
+    }, [])
+
     return (
         <section className="landing" id = 'landing'>
                 

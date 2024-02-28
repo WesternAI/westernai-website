@@ -1,5 +1,5 @@
 import Card from "./Card";
-import { useState } from "react";
+import { useState , useEffect} from "react";
 import React from "react";
 
 import './css/Carousel.css'
@@ -254,7 +254,9 @@ class Carousel extends React.Component {
     
                 
                 let elements = document.elementsFromPoint(displaceCheck, findY)
+                
                 elements.forEach(element => {
+                    if(element.className === undefined){return}
                     // sort for the carousel card element
                     // console.log(carousel.childNodes[0].className)
                     if (element.className == carousel.childNodes[0].className){
