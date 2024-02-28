@@ -30,7 +30,7 @@ const PORTFOLIO_INFO = [
         name: 'Publications',
         vps: ["Aarian Bhakoo", 'Sherry Shu'],
         img: pub,
-        description: 'PUBLISH STUFF WOOOO',
+        description: "The Publications portfolio creates content for Western Al's Wavelength newsletter and Speaker Series podcast in collaboration with the Development portfolio. We aim to promote and expand the reach of Western Al's content to help students develop a stronger passion for Al and Secure internships.",
     },
     {
         name: 'Hacks',
