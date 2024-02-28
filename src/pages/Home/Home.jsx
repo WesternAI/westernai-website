@@ -2,7 +2,7 @@ import './css/Home.css';
 
 // page components
 import NavigationBar from '../components/Navigationbar.jsx';
-import TestButton from '../components/TestButton';
+// import TestButton from '../components/TestButton';
 import DarkModeButton from '../components/DarkModeButton';
 
 // page sections

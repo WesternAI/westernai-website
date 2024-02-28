@@ -43,7 +43,7 @@ TxtType.prototype.tick = function() {
     }, delta);
 };
 
-window.onload = function() {
+window.addEventListener('load', () => {
     // typewriter effect for the title
     var elements = document.getElementsByClassName('landing-title');
     for (var i=0; i<elements.length; i++) {
@@ -54,7 +54,7 @@ window.onload = function() {
         }
     }
     
-};
+});
 
 const Landing = () => {
     return (
