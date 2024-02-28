@@ -16,7 +16,8 @@ const switchButtonTheme = (theme) => {
     }
 }
 
-const handleClick = () => {
+const handleClick = (e) => {
+    e.preventDefault()
     switchTheme()
     if(isThemeDark()){
         switchButtonTheme(0)

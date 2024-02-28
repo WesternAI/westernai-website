@@ -43,7 +43,7 @@ TxtType.prototype.tick = function() {
     }, delta);
 };
 
-window.addEventListener('load', () => {
+const handleLoad = () => {
     // typewriter effect for the title
     var elements = document.getElementsByClassName('landing-title');
     for (var i=0; i<elements.length; i++) {
@@ -53,9 +53,13 @@ window.addEventListener('load', () => {
           new TxtType(elements[i], JSON.parse(toRotate), period);
         }
     }
-});
+}
+
 
 const Landing = () => {
+    window.addEventListener('load', () => {
+        handleLoad()
+    });
     return (
         <section className="landing" id = 'landing'>
                 
