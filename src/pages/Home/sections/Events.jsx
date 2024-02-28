@@ -37,11 +37,11 @@ const Events = () => {
                 <p>we host social, educational, and competitive events on campus.</p>
             </div>
 
-            <div className="events-body">
+            {/* <div className="events-body">
                 {Event(EVENTS_INFO[0], AInnovationEvent())}
                 {Event(EVENTS_INFO[1])}
                 {Event(EVENTS_INFO[2])}
-            </div>
+            </div> */}
         </section>
     )
 }

@@ -18,20 +18,21 @@ const COLOURS = {
 }
 
 const changeIcons = (theme) => {
+
     const logo = document.querySelector('#nav-logo img')
 
     const socialIcons = document.querySelectorAll('.social-media-link')
 
     if(theme === 0){
-        logo.style.filter = 'invert(0)'
         for(let ams = 0; ams < socialIcons.length; ams++){
             socialIcons[ams].style.filter = 'invert(1)'
         }
+        logo.style.filter = 'invert(0)'
     } else {
-        logo.style.filter = 'invert(1)'
         for(let ams = 0; ams < socialIcons.length; ams++){
             socialIcons[ams].style.filter = 'invert(0)'
         }
+        logo.style.filter = 'invert(1)'
     }
 }
 
@@ -59,8 +60,8 @@ const switchTheme = (choice = 'null') => {
 
 // changes the theme to light or dark (light = 1, dark = 0)
 const changeLightDark = (theme) => {
+    console.log('theme:', theme)
     changeIcons(theme)
-
     for(let ams = 0; ams < STYLE_NAMES.length; ams++){
         const COLOUR = '--colour' + STYLE_NAMES[ams]
         const INVERSE = '--inverse' + STYLE_NAMES[ams]
@@ -92,12 +93,11 @@ const changeOppositeTheme = () => {
     }
 }
 
-
-
 const isThemeDark = () => {
     // const root = document.body;
     const rs = getComputedStyle(root);
     return rs.getPropertyValue('--colour-primary') == COLOURS.dark[0]
 }
+
 
 export {switchTheme, isThemeDark}

@@ -9,7 +9,7 @@ function App() {
     <Routes>
       {/* default homepage */}
       <Route exact path="/" element={<Home />} />
-      <Route path="/ainnovation" element={<AInnovation />} />
+      {/* <Route path="/ainnovation" element={<AInnovation />} /> */}
     </Routes>
   );
 }

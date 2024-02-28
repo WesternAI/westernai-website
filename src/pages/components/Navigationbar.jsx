@@ -6,7 +6,8 @@ import Container from './Container'
 const sections = [
     'portfolios',
     'events',
-    'projects',
+    // 'projects',
+    'coming-soon',
     'contact'
 ]
 

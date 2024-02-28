@@ -15,16 +15,16 @@ import proj from '../../assets/portfolio/proj_icon.png';
 const PORTFOLIO_INFO = [
     // presidents
     {
-        name: 'Communications',
-        vps: ['James Yang'],
-        img: comm,        
-        description: "The communication portfolio maintain WAI's social media and announcing updates, event opportunities to members. The communication portfolio is also responsible of responding to inquiries from students and forwarding them to appropriate portfolios.",
-    },
-    {
         name: "Presidents",
         vps: ["Sophia Ma", "Jacky Liu"],
         img: pres,
         description: 'Co-presidents are responsible for steering the overall vision of Western AI and its members. Co-presidents oversee all portfolios and tie the ideals of all the VPs in respective portfolios.',
+    },
+    {
+        name: 'Communications',
+        vps: ['James Yang'],
+        img: comm,        
+        description: "The communication portfolio maintain WAI's social media and announcing updates, event opportunities to members. The communication portfolio is also responsible of responding to inquiries from students and forwarding them to appropriate portfolios.",
     },
     {
         name: 'Publications',

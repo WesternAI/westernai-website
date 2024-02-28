@@ -10,10 +10,7 @@
 
 /* this is a test */
 .ainnovation .title{
-    font-size: 5rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    text-align: center;
-    color: #d98cf5;
-    text-shadow: 0 0 10px #d98cf5;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
 }

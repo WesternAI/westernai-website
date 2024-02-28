@@ -1,7 +1,10 @@
 .events {
     /* border-style: dotted; */
     position: relative;
-    height: 500vh;
+
+    /* REMEMBER TO CHANGE HEIGHT BACK TO 500VH */
+    /* height: 500vh; */ 
+    height: 100vh;
 
     display: flex;
     flex-direction: column;
