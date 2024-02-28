@@ -2,6 +2,7 @@ import './css/Navigationbar.css'
 
 import logo from '../../assets/logo.png'
 import Container from './Container'
+import { useEffect } from 'react'
 
 const sections = [
     'portfolios',
@@ -11,22 +12,21 @@ const sections = [
     'contact'
 ]
 
-window.addEventListener('load', () => {
-
+const handleLoad = () => {
     const join = document.getElementById('nav-bar-container')
     join.addEventListener('click', () => {
         window.open('https://westernusc.store/product/western-artificial-intelligence-design/')
     })
-
+    
     const logo = document.getElementById('nav-logo')
-
+    
     const options = []
-
+    
     
     for(let i = 0; i < sections.length; i++){
         const option = document.getElementById('nav-'+sections[i])
         options.push(option)
-
+    
         option.addEventListener('click', () => {
             window.location.href = `#${sections[i]}`
             closeNav()
@@ -43,21 +43,21 @@ window.addEventListener('load', () => {
             else{hide_option_title(option)}
         })
     }
-
+    
     // show title of option
     const reveal_option_title = (option) => {
         const title = option.getElementsByClassName('nav-bar-option-title')[0]
         title.style.opacity = 1
     }
-
+    
     // hide title of option
     const hide_option_title = (option) => {
         const title = option.getElementsByClassName('nav-bar-option-title')[0]
         title.style.opacity = 0
     }
-
+    
     let toggle = true
-
+    
     const openNav = () => {
         // reverse the toggle
         toggle = false
@@ -77,17 +77,17 @@ window.addEventListener('load', () => {
             }
         }
     }
-
+    
     const closeNav = () => {
         // reverse the toggle
         toggle = true
-
+    
         for(let i = 0; i < options.length; i++){
             const option = options[i]
             option.style.top = 0
             option.style.opacity = 0
         }
-
+    
         // check if the user is on mobile
         if(window.innerWidth < 800){
             for(let i = 0; i < options.length; i++){
@@ -102,7 +102,11 @@ window.addEventListener('load', () => {
         else{closeNav()}
     })
 
-})
+}
+
+// window.addEventListener('load', () => {
+
+// })
 
 const NavButton = (link, title) => {
     return (
@@ -116,6 +120,9 @@ const NavButton = (link, title) => {
 
 
 const NavigationBar = () => {
+    useEffect(() => {
+        handleLoad()
+    },[])
     return (
         <nav className="nav-bar">
 
