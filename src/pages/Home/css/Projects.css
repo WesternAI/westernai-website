@@ -14,5 +14,5 @@ a {
     font-weight: 800;
 
     text-decoration: underline;
-    text-decoration-color: rgb(var(--inverse-primary));
+    /* text-decoration-color: rgb(var(--inverse-primary)); */
 }
