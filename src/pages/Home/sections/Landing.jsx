@@ -53,7 +53,6 @@ window.addEventListener('load', () => {
           new TxtType(elements[i], JSON.parse(toRotate), period);
         }
     }
-    
 });
 
 const Landing = () => {

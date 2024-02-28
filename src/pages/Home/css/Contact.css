@@ -67,18 +67,6 @@
     align-items: center;
 }
 
-.contact .contact-description .contact-communications{
-    transition: 0.4s ease;
-}
-
-.contact .contact-description .contact-communications:hover{
-    /* glowing effect */
-    color: rgb(var(--inverse-primary));
-    transform: translateY(-10%);
-    transition: 0.4s ease;
-    cursor: pointer;
-}
-
 .contact .club-info{
     
 }
