@@ -11,3 +11,5 @@ hi it's Trinity!! :)
 I'm learning about git
 
 hi its' james
+
+yo wasssup
