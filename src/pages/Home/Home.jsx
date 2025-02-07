@@ -4,6 +4,7 @@ import './css/Home.css';
 import NavigationBar from '../components/Navigationbar.jsx';
 // import TestButton from '../components/TestButton';
 import DarkModeButton from '../components/DarkModeButton';
+import ImageGallery from '../components/ImageGallery.jsx';
 
 // page sections
 import Landing from './sections/Landing.jsx';
@@ -28,6 +29,10 @@ const Home = () => {
 
             {/* <TestButton /> */}
             <DarkModeButton />
+
+            <div style={{width: "100vw", height: "100vh"}}>
+                <ImageGallery></ImageGallery>
+            </div>
         </div>
     )
 }
