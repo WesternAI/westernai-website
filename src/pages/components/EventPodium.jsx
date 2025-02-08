@@ -14,6 +14,8 @@ const ImageGalleryColumn = ({names, images}) => {
     const [thirdImg] = useState(images[2]); 
 
     return (
-      <></>
+      <section>
+        
+      </section>
     )
 }
