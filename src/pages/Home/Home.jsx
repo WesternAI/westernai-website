@@ -13,6 +13,13 @@ import Projects from './sections/Projects.jsx';
 import Contact from './sections/Contact.jsx';
 import Portfolios from './sections/Portfolios.jsx';
 
+import testImage from "../../assets/events/mist.jpg";
+import testImageTwo from "../../assets/events/mountainskies.jpg";
+import testImageThree from "../../assets/events/nature.jpg";
+import testImageFour from "../../assets/events/paris.jpg";
+import testImageFive from "../../assets/events/parisTwo.jpg";
+import testImageSix from "../../assets/events/rocks.jpg";
+
 const Home = () => {
     return (
         <div className="home_page">
@@ -31,9 +38,10 @@ const Home = () => {
             <DarkModeButton />
 
             <div style={{width: "100vw", height: "100vh"}}>
-                <ImageGallery></ImageGallery>
+                <ImageGallery images={Array.from({ length: 20 }, () => [testImage, testImageTwo, testImageThree, testImageFour, testImageFive, testImageSix][Math.floor(Math.random() * 6)])}></ImageGallery>
             </div>
         </div>
+        // 
     )
 }
 export default Home;
