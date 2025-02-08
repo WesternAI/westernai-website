@@ -1,7 +1,8 @@
 import './css/ImageGallery.css';
 import testImage from "../../assets/portfolio/comms_icon.png";
 
-const ImageGallery = () => {
+/* param {images} -> array of imported images e.g. import testImage from "../../" */
+const ImageGallery = ({images}) => {
     return (
         <>
             <section className='image-gallery-container'>
