@@ -1,5 +1,29 @@
-import { useState, useEffect } from "react";
+import { useState, useRef, forwardRef, useImperativeHandle } from "react";
 import './css/ImageGallery.css';
+
+const ImageGalleryModal = forwardRef((props, ref) => {
+    const [isActive, setIsActive] = useState(false);
+    const [selectedImageURL, setSelectedImageURL] = useState("");
+
+    useImperativeHandle(ref, () => ({
+        activateModal: (imageURL) => {
+            setSelectedImageURL(imageURL);
+            setIsActive(true);
+        }
+    }));
+
+    const deactivateModal = () => {
+        setIsActive(false);
+    }
+
+    return (
+        <>
+            <div className="image-gallery-modal-container" style={{display: isActive ? "flex" : "none"}} onClick={deactivateModal}>
+                <img src={selectedImageURL} alt="Selected"></img>
+            </div>
+        </>
+    )
+})
 
 
 /* param {images} -> array of imported images e.g. import testImage from "../../" */
@@ -11,7 +35,7 @@ const ImageGalleryColumn = ({images}) => {
         let columnImageComponents = new Array(images.length);
         for (let i = 0; i < images.length; i++) {
             let imageURL = images[i];
-            columnImageComponents[i] = (<img src={imageURL} alt="Image Gallery Photo" key={Math.random()}></img>);
+            columnImageComponents[i] = (<img src={imageURL} alt="Gallery Item" key={Math.random()}></img>);
         }
 
         setColumnImages(columnImageComponents);
@@ -19,11 +43,6 @@ const ImageGalleryColumn = ({images}) => {
 
     return (
         <div className="image-gallery-column">
-            {/* <img src={testImage} alt="testing"></img>
-            <img src={testImage} alt="testing"></img>
-            <img src={testImage} alt="testing"></img>
-            <img src={testImage} alt="testing"></img>
-            <img src={testImage} alt="testing"></img> */}
             {columnImages}
         </div>
     )
@@ -33,7 +52,16 @@ const ImageGalleryColumn = ({images}) => {
 /* param {imagesPerColumn} -> integer corresponding to how many images per column (rows of images) */
 
 const ImageGallery = ({images}) => {
+    const imageModalRef = useRef();
     const [columns, setColumns] = useState([]);
+
+    const handleClick = (event) => {
+        if (event.target.tagName === "IMG") {
+            if (imageModalRef.current) {
+                imageModalRef.current.activateModal(event.target.src);
+            }
+        }
+    }
 
     useState(() => {
         let quarterOfImages = Math.ceil(images.length / 4);
@@ -49,10 +77,10 @@ const ImageGallery = ({images}) => {
     return (
         <>
             <section className='image-gallery-container'>
-                <div className='image-gallery-row'>
-                    {/* <ImageGalleryColumn images={[testImage, testImage, testImage, testImage, testImage]}></ImageGalleryColumn> */}
+                <div className='image-gallery-row' onClick={(event) => handleClick(event)}>
                     {columns}
                 </div>
+                <ImageGalleryModal ref={imageModalRef}></ImageGalleryModal>
             </section>
         </>
     )
