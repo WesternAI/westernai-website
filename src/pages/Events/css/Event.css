@@ -1,0 +1,116 @@
+.Event {
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.bar {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 20px 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.col {
+  display: flex;
+  align-items: center;
+}
+
+/* Profile circle in top right */
+.profile-circle {
+  width: 40px;
+  height: 40px;
+  background-color: #e0e0e0;
+  border-radius: 50%;
+}
+
+/* Dropdown styling */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  user-select: none;
+}
+
+.dropdown-button {
+  padding: 8px 16px;
+  background-color: white;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-menu {
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+  z-index: 1;
+  border-radius: 4px;
+  margin-top: 4px;
+}
+
+.dropdown-item {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: #f1f1f1;
+}
+
+.descript {
+  font-size: 0.9rem;
+  color: #666;
+  margin-right: auto;
+}
+
+/* Second dropdown styling */
+.subCat .dropdown-button {
+  font-size: 16px;
+  padding: 6px 12px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
+
+/* Page content area */
+.pageInfo {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-y: auto;
+}
+
+.info {
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  min-width: 95%;
+  min-height: 95%;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}

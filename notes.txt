@@ -12,6 +12,25 @@ I'm learning about git
 
 hi its' james
 
-yo wasssup
 
-example change
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+useState, useEffect
+
+Styling (tailwind)
+- 

@@ -9,6 +9,9 @@ import EventPodium from '../components/EventPodium.jsx';
 // page sections
 import Landing from './sections/Landing.jsx';
 import Events from './sections/Events.jsx';
+
+import Flagship from './sections/Flagship.jsx';
+
 import Projects from './sections/Projects.jsx';
 import Contact from './sections/Contact.jsx';
 import Portfolios from './sections/Portfolios.jsx';
@@ -27,6 +30,9 @@ const Home = () => {
             
             <Portfolios />
             <Events />
+
+            {/* <Flagship /> */}
+
             <Projects />
             <Contact />
 
