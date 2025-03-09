@@ -21,6 +21,34 @@
     vertical-align: middle;
     width: 100%;
     border-radius: 5px;
+    cursor: pointer;
+}
+
+.image-gallery-modal-container {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.667);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+.image-gallery-modal-container img {
+    border-radius: 5px;
+    cursor: pointer;
+    animation: fadeInScale 0.1s ease-out forwards;
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 /* Responsive layout - makes a two column-layout instead of four columns */
