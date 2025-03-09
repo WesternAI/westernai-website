@@ -2,6 +2,7 @@
 const STYLE_NAMES = [
     '-primary',
     '-secondary',
+    '-tertiary'
 ]
 
 const COLOURS = {
@@ -9,11 +10,13 @@ const COLOURS = {
         '255, 255, 255',
         // '192, 192, 192',
         '240, 240, 240',
+        '230, 230, 230',
     ],
     dark: [
         '0, 0, 0',
         // '64, 64, 64',
         '16, 16, 16',
+        '30, 30, 30',
     ]
 }
 
@@ -67,7 +70,6 @@ const changeLightDark = (theme) => {
         const INVERSE = '--inverse' + STYLE_NAMES[ams]
 
         if(theme === 0){
-    
             root.style.setProperty(COLOUR, COLOURS.dark[ams])
             root.style.setProperty(INVERSE, COLOURS.light[ams])
 

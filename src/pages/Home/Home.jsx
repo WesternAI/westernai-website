@@ -4,6 +4,7 @@ import './css/Home.css';
 import NavigationBar from '../components/Navigationbar.jsx';
 // import TestButton from '../components/TestButton';
 import DarkModeButton from '../components/DarkModeButton';
+import EventPodium from '../components/EventPodium.jsx';
 
 // page sections
 import Landing from './sections/Landing.jsx';
@@ -11,6 +12,9 @@ import Events from './sections/Events.jsx';
 import Projects from './sections/Projects.jsx';
 import Contact from './sections/Contact.jsx';
 import Portfolios from './sections/Portfolios.jsx';
+
+// event data
+import EVENTS_INFO from '../pagejs/EVENTS_INFO.js';
 
 const Home = () => {
     return (
@@ -28,7 +32,14 @@ const Home = () => {
 
             {/* <TestButton /> */}
             <DarkModeButton />
+
+            <div style={{width: "100vw", height: "100vh"}}>
+                <EventPodium allEvent={EVENTS_INFO} defaultEventNum={0}></EventPodium>
+            </div>
+
+            
         </div>
+        // 
     )
 }
 export default Home;

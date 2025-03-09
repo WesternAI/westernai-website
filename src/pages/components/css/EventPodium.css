@@ -1,0 +1,89 @@
+
+#podium {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    gap: 15px;
+    height: 100vh;
+    width: 100vw;
+    align-items: flex-end;
+    padding-bottom: 20vh;
+}
+
+.box {
+    width: 18vw;
+    border-radius: 5%;
+    outline-style: solid;
+    outline-width: 1vw;
+    min-width: 100px;
+    transition: 0.2s;
+}
+
+.box:hover {
+    width: 20vw;
+    transition: 0.3s;
+    outline-width: 1.1vw;
+}
+
+#box1:hover {
+    height: 49vh;   
+}
+
+#box2:hover {
+    height: 37vh;   
+}
+
+#box3:hover {
+    height: 27vh;   
+}
+
+.pillar {
+    text-align: center;
+    border-radius: 4%;
+    width: 24vw;
+    justify-items: center;
+}
+
+.teamImg {
+    width: 10vw;
+    height: 10vw;
+    min-width: 60px;
+    min-height: 60px;
+    border-radius: 5%;
+    outline-style: solid;
+    outline-width: 2px;
+    outline-color: rgb(var(--inverse-primary));
+    aspect-ratio: 1/1;
+    margin-top: 3vw;
+}
+
+#box1 {
+    outline-color: rgb(238, 205, 17);   
+    /* background-color: rgb(217, 188, 22); */
+    height: 47vh;
+}   
+
+#box2 {
+    outline-color: silver;   
+    /* background-color: silver; */
+    height: 35vh;
+}
+
+#box3 {
+    outline-color: #ce4628; 
+    /* background-color: #ce4628; */
+    height: 25vh;
+}
+
+.placement {
+    font-size: 5em;
+    margin-bottom: 2vh;
+}
+
+.teamName {
+    /* color: black; */
+    padding-bottom: 3vh;
+    padding-top: 1vh;
+    font-size: 3vw;
+}
+
