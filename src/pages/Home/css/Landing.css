@@ -1,60 +1,569 @@
-/* landing section START --=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
-.home_page .landing{
+/* Futuristic AI Landing Section */
+.landing {
     position: relative;
     height: 100vh;
-    /* display:flex;
-    flex-direction: column;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    align-items: center; */
+    overflow: hidden;
+    background: linear-gradient(135deg, 
+        rgba(var(--color-surface), 0.95) 0%, 
+        rgba(var(--color-surface-elevated), 0.9) 100%
+    );
+    border-bottom: 2px solid rgba(var(--color-accent), 0.3);
 }
 
-.home_page .landing .landing-bg{
+/* Neural network background visualization */
+.landing::before {
+    content: '';
     position: absolute;
-    /* z-index: -10; */
+    top: 0;
+    left: 0;
     width: 100%;
-    height:100%;
-    
+    height: 100%;
+    background-image: 
+        /* Neural network connections */
+        linear-gradient(45deg, transparent 49%, rgba(var(--color-accent), 0.1) 50%, transparent 51%),
+        linear-gradient(-45deg, transparent 49%, rgba(var(--color-accent-tertiary), 0.1) 50%, transparent 51%),
+        /* Mathematical grid */
+        linear-gradient(90deg, transparent 98%, rgba(var(--color-accent-secondary), 0.05) 100%),
+        linear-gradient(0deg, transparent 98%, rgba(var(--color-accent-quaternary), 0.05) 100%);
+    background-size: 50px 50px, 50px 50px, 20px 20px, 20px 20px;
+    z-index: 1;
+    animation: neuralNetwork 20s linear infinite;
+}
+
+@keyframes neuralNetwork {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(50px, 50px); }
+}
+
+.landing-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.landing-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: linear-gradient(45deg, 
+        rgba(217, 140, 245, 0.8) 0%, 
+        rgba(43, 32, 248, 0.8) 50%, 
+        rgba(49, 162, 250, 0.8) 100%
+    );
+    border-radius: 50%;
+    animation: float linear infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.landing-content {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    padding: 3rem;
+    background: rgba(var(--color-surface), 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: var(--radius-2xl);
+    border: 2px solid rgba(var(--color-accent), 0.3);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        0 0 60px rgba(var(--color-accent), 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    animation: aiGlow 3s ease-in-out infinite alternate;
+    overflow: hidden;
+    margin: 2rem;
+}
+
+.landing-text {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.landing-text.animate-in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.landing-title {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    /* background: linear-gradient(45deg, #7998DD,#8E72E1); */
+    gap: 0.5rem;
 }
 
-.home_page .landing .landing-bg .landing-bg-content{
-    position: relative;
-    width: 80vw;
-    height: 10vh;
+.landing-prefix {
+    font-size: 0.4em;
+    font-weight: 400;
+    color: rgba(var(--color-text-primary), 0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
 
-.home_page .landing .landing-bg .landing-bg-content h1{
-    font-size: 15vw;
-
-    /* width:0; */
-    font-weight: 500;
-    /* background: -webkit-linear-gradient(45deg, #7998DD,#8E72E1); */
-    /* -webkit-background-clip: text; */
-    /* -webkit-text-fill-color: transparent; */
-    /* use random url background image */
-    /* background: url('https://source.unsplash.com/random/1920x1080') no-repeat center center/cover; */
-    background-image: 
-    url("https://cdn.dribbble.com/users/1770290/screenshots/6164788/bg_76.gif");
-    background-size: 110% auto;
-    background-position: center;
-    color: transparent;
+.landing-main {
+    background: var(--gradient-text);
     -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     background-clip: text;
-    
-    position: absolute;
-    transform: translate(-50%, -50%);
-
-    top: 50%;
-    left: 50%;
-    
-    z-index: 100;
-
-    pointer-events: none;
+    position: relative;
+    min-height: 1.2em;
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
-/* landing section END --=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
+.cursor {
+    animation: blink 1s infinite;
+    color: rgb(var(--color-text-primary));
+    -webkit-text-fill-color: initial;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+.landing-subtitle {
+    font-size: 1.25rem;
+    color: rgba(var(--color-text-primary), 0.8);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    font-weight: 300;
+}
+
+.landing-stats {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    background: rgba(var(--color-accent), 0.1);
+    border: 1px solid rgba(var(--color-accent), 0.2);
+    border-radius: var(--radius-lg);
+    backdrop-filter: blur(10px);
+    transition: all var(--transition-normal);
+    min-width: 120px;
+}
+
+.stat-item:hover {
+    transform: translateY(-4px);
+    background: rgba(var(--color-accent), 0.15);
+    border-color: rgba(var(--color-accent), 0.4);
+    box-shadow: 0 8px 25px rgba(var(--color-accent), 0.2);
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: rgb(var(--color-accent));
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: rgba(var(--color-text-primary), 0.7);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.landing-actions {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.landing-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.landing-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.landing-btn:hover::before {
+    left: 100%;
+}
+
+.landing-btn.primary {
+    background: linear-gradient(135deg, 
+        rgba(217, 140, 245, 0.9) 0%, 
+        rgba(43, 32, 248, 0.9) 50%, 
+        rgba(49, 162, 250, 0.9) 100%
+    );
+    color: white;
+    box-shadow: 0 10px 30px rgba(217, 140, 245, 0.3);
+}
+
+.landing-btn.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(217, 140, 245, 0.4);
+}
+
+.landing-btn.secondary {
+    background: transparent;
+    color: rgb(var(--inverse-primary));
+    border: 2px solid rgba(var(--inverse-primary), 0.3);
+}
+
+.landing-btn.secondary:hover {
+    background: rgba(var(--color-accent), 0.1);
+    border-color: rgba(var(--color-accent), 0.6);
+    transform: translateY(-2px);
+}
+
+.landing-btn.tertiary {
+    background: transparent;
+    color: rgb(var(--color-accent-tertiary));
+    border: 2px solid rgba(var(--color-accent-tertiary), 0.3);
+}
+
+.landing-btn.tertiary:hover {
+    background: rgba(var(--color-accent-tertiary), 0.1);
+    border-color: rgba(var(--color-accent-tertiary), 0.6);
+    transform: translateY(-2px);
+}
+
+.landing-visual {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0.3s;
+}
+
+.landing-visual.animate-in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.landing-cube {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    transform-style: preserve-3d;
+    animation: rotate 20s infinite linear;
+}
+
+@keyframes rotate {
+    0% { transform: rotateX(0deg) rotateY(0deg); }
+    100% { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+.cube-face {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border: 2px solid rgba(var(--color-accent), 0.3);
+    background: rgba(var(--color-accent), 0.05);
+    backdrop-filter: blur(10px);
+    box-shadow: 
+        inset 0 0 20px rgba(var(--color-accent), 0.1),
+        0 0 40px rgba(var(--color-accent-tertiary), 0.1);
+}
+
+/* Add AI/ML mathematical symbols on cube faces */
+.cube-face::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.2rem;
+    color: rgba(var(--color-accent), 0.4);
+    font-weight: 300;
+    padding: 0.5rem;
+    line-height: 1.1;
+    text-align: center;
+    white-space: pre-line;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cube-face.front::before { 
+    content: '∇f(x) = ∂f/∂x\n∑(i=1 to n) x_i\n∫ f(x)dx\n∂²f/∂x²\n∇²f = 0\nf(x) = σ(wx + b)\nReLU(x) = max(0,x)\nL = -∑y log(ŷ)\n∂L/∂w = ∂L/∂ŷ · ∂ŷ/∂w\nE[Y|X] = ∫ y·p(y|x)dy';
+}
+
+.cube-face.back::before { 
+    content: 'P(A|B) = P(B|A)P(A)/P(B)\nH(X) = -∑p(x)log p(x)\nKL(P||Q) = ∑p(x)log(p(x)/q(x))\nI(X;Y) = H(X) - H(X|Y)\nD_KL(P||Q) ≥ 0\nH(X,Y) ≤ H(X) + H(Y)\nI(X;Y) = I(Y;X)\nH(X|Y) ≤ H(X)\nP(X,Y) = P(X|Y)P(Y)';
+}
+
+.cube-face.right::before { 
+    content: 'X ~ N(μ,σ²)\nE[X] = μ\nVar(X) = σ²\nP(|X-μ| > kσ) ≤ 1/k²\nlim(n→∞) P(|X̄-μ| < ε) = 1\nX̄ → N(μ,σ²/n)\nP(A∩B) = P(A)P(B)\nE[aX+b] = aE[X]+b\nVar(aX+b) = a²Var(X)\nCov(X,Y) = E[XY] - E[X]E[Y]';
+}
+
+.cube-face.left::before { 
+    content: 'argmax f(x)\nmin L(θ)\nθ* = argmin Σ(y_i - f(x_i))²\n∇θ L(θ) = 0\n∂L/∂θ_i = 0\nθ^(t+1) = θ^(t) - α∇L(θ^(t))\nα = learning_rate\nβ₁, β₂ = momentum\nAdam: θ = θ - α·m̂/(√v̂ + ε)\nRMSprop: v = βv + (1-β)g²';
+}
+
+.cube-face.top::before { 
+    content: '∀x ∈ X, ∃y ∈ Y\nf: X → Y\nf⁻¹: Y → X\n|X| = cardinality\nX ⊆ Y\nX ∩ Y = ∅\nX ∪ Y\nP(X) = power set\nf is bijective\nf is injective\nf is surjective';
+}
+
+.cube-face.bottom::before { 
+    content: 'O(n log n)\nO(n²)\nO(2ⁿ)\nO(1)\nT(n) = aT(n/b) + f(n)\nMaster Theorem\nf(n) = Θ(n^log_b a)\nSpace: O(n)\nTime: O(n²)\nNP-complete\nP vs NP';
+}
+
+
+.cube-face.front { transform: rotateY(0deg) translateZ(150px); }
+.cube-face.back { transform: rotateY(180deg) translateZ(150px); }
+.cube-face.right { transform: rotateY(90deg) translateZ(150px); }
+.cube-face.left { transform: rotateY(-90deg) translateZ(150px); }
+.cube-face.top { transform: rotateX(90deg) translateZ(150px); }
+.cube-face.bottom { transform: rotateX(-90deg) translateZ(150px); }
+
+.landing-scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(var(--inverse-primary), 0.6);
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    z-index: 3;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+.scroll-arrow {
+    animation: bounce-arrow 2s infinite;
+}
+
+@keyframes bounce-arrow {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-5px);
+    }
+    60% {
+        transform: translateY(-2px);
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .landing {
+        padding: 1rem;
+    }
+    
+    .landing-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+        padding: 1.5rem;
+        margin: 0 1rem;
+    }
+    
+    .landing-visual {
+        order: -1;
+    }
+    
+    .landing-cube {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .cube-face {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .cube-face.front { transform: rotateY(0deg) translateZ(100px); }
+    .cube-face.back { transform: rotateY(180deg) translateZ(100px); }
+    .cube-face.right { transform: rotateY(90deg) translateZ(100px); }
+    .cube-face.left { transform: rotateY(-90deg) translateZ(100px); }
+    .cube-face.top { transform: rotateX(90deg) translateZ(100px); }
+    .cube-face.bottom { transform: rotateX(-90deg) translateZ(100px); }
+    
+    .landing-actions {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .landing-btn {
+        padding: 0.875rem 1.5rem;
+        font-size: 0.9rem;
+        min-width: 200px;
+    }
+    
+    .landing-stats {
+        justify-content: center;
+        gap: 1rem;
+    }
+    
+    .stat-item {
+        min-width: 100px;
+        padding: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .landing {
+        padding: 0.5rem;
+        min-height: 100vh;
+    }
+    
+    .landing-content {
+        padding: 1rem;
+        margin: 0;
+        border-radius: var(--radius-lg);
+    }
+    
+    .landing-title {
+        font-size: clamp(2rem, 8vw, 2.5rem);
+        line-height: 1.2;
+    }
+    
+    .landing-subtitle {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+    
+    .landing-actions {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+    }
+    
+    .landing-btn {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+        padding: 0.75rem 1.25rem;
+        font-size: 0.875rem;
+    }
+    
+    .landing-stats {
+        justify-content: center;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+    }
+    
+    .stat-item {
+        min-width: 80px;
+        padding: 0.5rem;
+        flex: 1;
+        max-width: 120px;
+    }
+    
+    .stat-number {
+        font-size: 1.25rem;
+    }
+    
+    .stat-label {
+        font-size: 0.75rem;
+    }
+    
+    .landing-cube {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .cube-face {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .cube-face.front { transform: rotateY(0deg) translateZ(75px); }
+    .cube-face.back { transform: rotateY(180deg) translateZ(75px); }
+    .cube-face.right { transform: rotateY(90deg) translateZ(75px); }
+    .cube-face.left { transform: rotateY(-90deg) translateZ(75px); }
+    .cube-face.top { transform: rotateX(90deg) translateZ(75px); }
+    .cube-face.bottom { transform: rotateX(-90deg) translateZ(75px); }
+    
+    .cube-face::before {
+        font-size: 0.8rem;
+        padding: 0.3rem;
+    }
+}

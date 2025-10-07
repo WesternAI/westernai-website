@@ -31,8 +31,8 @@ const PageBand = ({title, rotate, translate, time, animation}) => {
                     animation: `${animation} ${time}s infinite linear`,
                 }}>
                 {/* create 10 page-band-title */}
-                {titles.map(title => {
-                    return title
+                {titles.map((title, index) => {
+                    return <div key={index}>{title}</div>
                 })}
             </div>
         </div>

@@ -1,158 +1,131 @@
-import './css/Navigationbar.css'
-
-import logo from '../../assets/logo.png'
-import Container from './Container'
-import { useEffect } from 'react'
-
-const sections = [
-    'portfolios',
-    'events',
-    // 'projects',
-    'coming-soon',
-    'contact'
-]
-
-const handleLoad = () => {
-    const join = document.getElementById('nav-bar-container')
-    join.addEventListener('click', () => {
-        window.open('https://westernusc.store/product/western-artificial-intelligence-design/')
-    })
-    
-    const logo = document.getElementById('nav-logo')
-    
-    const options = []
-    
-    
-    for(let i = 0; i < sections.length; i++){
-        const option = document.getElementById('nav-'+sections[i])
-        options.push(option)
-    
-        option.addEventListener('click', () => {
-            window.location.href = `#${sections[i]}`
-            closeNav()
-        })
-        
-        option.addEventListener('mouseover', () => {
-            // check if the user is on mobile
-            if(window.innerWidth < 800){}
-            else{reveal_option_title(option)}
-        })
-        
-        option.addEventListener('mouseout', () => {
-            if(window.innerWidth < 800){}
-            else{hide_option_title(option)}
-        })
-    }
-    
-    // show title of option
-    const reveal_option_title = (option) => {
-        const title = option.getElementsByClassName('nav-bar-option-title')[0]
-        title.style.opacity = 1
-    }
-    
-    // hide title of option
-    const hide_option_title = (option) => {
-        const title = option.getElementsByClassName('nav-bar-option-title')[0]
-        title.style.opacity = 0
-    }
-    
-    let toggle = true
-    
-    const openNav = () => {
-        // reverse the toggle
-        toggle = false
-        
-        let change = 150
-        
-        for(let i = 0; i < options.length; i++){
-            const option = options[i]
-            option.style.top = `${change*(i+1)}%`
-            option.style.opacity = 1
-        }
-        
-        // check if the user is on mobile
-        if(window.innerWidth < 800){
-            for(let i = 0; i < options.length; i++){
-                reveal_option_title(options[i])
-            }
-        }
-    }
-    
-    const closeNav = () => {
-        // reverse the toggle
-        toggle = true
-    
-        for(let i = 0; i < options.length; i++){
-            const option = options[i]
-            option.style.top = 0
-            option.style.opacity = 0
-        }
-    
-        // check if the user is on mobile
-        if(window.innerWidth < 800){
-            for(let i = 0; i < options.length; i++){
-                hide_option_title(options[i])
-            }
-        }
-    }
-    
-    // click on logo to open nav
-    logo.addEventListener('click', () => {
-        if(toggle){openNav()}
-        else{closeNav()}
-    })
-
-}
-
-// window.addEventListener('load', () => {
-
-// })
-
-const NavButton = (link, title) => {
-    return (
-        <div className="nav-bar-option" id = {'nav-'+title}>
-            <div className="nav-bar-option-title">{title}</div>
-        </div>
-    )
-}
-
-
-
+import React, { useState, useEffect } from 'react';
+import './css/Navigationbar.css';
+import logo from '../../assets/logo.png';
 
 const NavigationBar = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
+    const [activeSection, setActiveSection] = useState('landing');
+
+    const sections = [
+        { id: 'landing', label: 'Home' },
+        { id: 'showcase', label: 'Why Us' },
+        { id: 'events', label: 'Events' },
+        { id: 'projects', label: 'Projects' },
+        { id: 'executive-team', label: 'Team' },
+        { id: 'contact', label: 'Join Us' }
+    ];
+
     useEffect(() => {
-        handleLoad()
-    },[])
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 50);
+            
+            // Update active section based on scroll position
+            const sections = document.querySelectorAll('section[id]');
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            setActiveSection(current);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    const scrollToSection = (sectionId) => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+            const headerHeight = 80; // Account for fixed header
+            const elementPosition = element.offsetTop - headerHeight;
+            
+            window.scrollTo({
+                top: elementPosition,
+                behavior: 'smooth'
+            });
+        }
+        setIsMenuOpen(false);
+    };
+
+    const handleJoinClick = () => {
+        window.open('https://westernusc.store/product/western-artificial-intelligence-design/', '_blank');
+    };
+
     return (
-        <nav className="nav-bar">
-
-                <Container 
-                    id = 'nav-bar-container'
-                    child = {
-                        <div className="nav-bar-join">{'join now'}</div>
-                    }
-                />
-
-                <div className="nav-bar-content">
-
-                    <div className="nav-bar-option" id = 'nav-logo'>
-                        <img src={logo} alt="" />
+        <nav className={`nav-bar ${isScrolled ? 'scrolled' : ''}`}>
+            <div className="nav-container">
+                {/* Logo */}
+                <div className="nav-logo" onClick={() => scrollToSection('landing')}>
+                    <div className="nav-logo-icon">
+                        <img src={logo} alt="Western AI Logo" width="32" height="32" />
                     </div>
-
-                    {sections.map((section) => {
-                        return NavButton(`#${section}`, section)
-                    })}
-
-                    {/* <div className = 'nar-bar-option'><a href = '#portfolios'>portfolios</a></div> */}
-                    {/* <div className = 'nar-bar-option'><a href = ''>events</a></div> */}
-                    {/* <div className = 'nar-bar-option'><a href = ''>projects</a></div> */}
-                    {/* <div className = 'nar-bar-option'><a href = ''>about</a></div> */}
-                    {/* <div className = 'nar-bar-option'><a href = ''>contact</a></div> */}
-                    {/* <div className="join">join us</div> */}
-
+                    <span className="nav-logo-text">Western AI</span>
                 </div>
 
+                {/* Desktop Navigation */}
+                <div className="nav-links">
+                    {sections.map((section) => (
+                        <button
+                            key={section.id}
+                            className={`nav-link ${activeSection === section.id ? 'active' : ''}`}
+                            onClick={() => scrollToSection(section.id)}
+                        >
+                            {section.label}
+                        </button>
+                    ))}
+                </div>
+
+                {/* CTA Button */}
+                <button className="nav-cta" onClick={handleJoinClick}>
+                    Join Now
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                        <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                </button>
+
+                {/* Mobile Menu Button */}
+                <button 
+                    className={`nav-menu-toggle ${isMenuOpen ? 'open' : ''}`}
+                    onClick={() => setIsMenuOpen(!isMenuOpen)}
+                    aria-label="Toggle menu"
+                >
+                    {isMenuOpen ? (
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                    ) : (
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                    )}
+                </button>
+            </div>
+
+            {/* Mobile Menu */}
+            <div className={`nav-mobile-menu ${isMenuOpen ? 'open' : ''}`}>
+                <div className="nav-mobile-links">
+                    {sections.map((section) => (
+                        <button
+                            key={section.id}
+                            className={`nav-mobile-link ${activeSection === section.id ? 'active' : ''}`}
+                            onClick={() => scrollToSection(section.id)}
+                        >
+                            {section.label}
+                        </button>
+                    ))}
+                    <button className="nav-mobile-cta" onClick={handleJoinClick}>
+                        Join Us
+                    </button>
+                </div>
+            </div>
         </nav>
-    )
-}
+    );
+};
+
 export default NavigationBar;

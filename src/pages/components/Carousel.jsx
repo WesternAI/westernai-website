@@ -17,8 +17,8 @@ class Carousel extends React.Component {
         return (
             <div className="carousel-container">
                 <div className="carousel" id = {this.id}>
-                {this.state.cards.map((card) => {
-                    return (card)
+                {this.state.cards.map((card, index) => {
+                    return <div key={index}>{card}</div>
                 })}
                 </div>
             </div>

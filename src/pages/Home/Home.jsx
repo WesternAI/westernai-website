@@ -3,37 +3,39 @@ import './css/Home.css';
 // page components
 import NavigationBar from '../components/Navigationbar.jsx';
 // import TestButton from '../components/TestButton';
-import DarkModeButton from '../components/DarkModeButton';
 
 // page sections
 import Landing from './sections/Landing.jsx';
+import Showcase from './sections/Showcase.jsx';
 import Events from './sections/Events.jsx';
-
-import Flagship from './sections/Flagship.jsx';
-
 import Projects from './sections/Projects.jsx';
+import ExecutiveTeam from './sections/ExecutiveTeam.jsx';
 import Contact from './sections/Contact.jsx';
-import Portfolios from './sections/Portfolios.jsx';
 
 const Home = () => {
     return (
         <div className="home_page">
             <NavigationBar />
 
-            {/* landing section START =-=-=-=-=-=-=-=-=-=-=-=-=-= */}
+            {/* Hero Landing Section - First Impression */}
             <Landing />
-            {/* landing section END =-=-=-=-=-=-=-=-=-=-=-=-=-= */}
             
-            <Portfolios />
+            {/* Why Western AI - Key Achievements */}
+            <Showcase />
+            
+            {/* Club Showcase - What We Do */}
             <Events />
-
-            {/* <Flagship /> */}
-
+            
+            {/* Our Projects - Innovation Hub */}
             <Projects />
+            
+            {/* Meet the Team - Leadership */}
+            <ExecutiveTeam />
+            
+            {/* Join Us - Call to Action */}
             <Contact />
 
             {/* <TestButton /> */}
-            <DarkModeButton />
         </div>
     )
 }

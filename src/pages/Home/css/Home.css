@@ -1,14 +1,20 @@
-/* all css is wrapped around this */
-/* .home_page {} */
-/* .home_page {} */
-
+/* Home Page Styles */
 .home_page {
     display: flex;
     flex-direction: column;
-    /* height:100vh; */
-    /* background-color: #000; */
+    min-height: 100vh;
+    background: rgb(var(--color-primary));
+    color: rgb(var(--color-text-primary));
 }
 
+/* Ensure proper spacing between sections */
+.home_page > section {
+    min-height: 100vh;
+}
+
+/* Smooth transitions for theme changes */
 .home_page * {
-    /* border-style: dotted; */
+    transition: background-color var(--transition-normal), 
+                color var(--transition-normal), 
+                border-color var(--transition-normal);
 }
