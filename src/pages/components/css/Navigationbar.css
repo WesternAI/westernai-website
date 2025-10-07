@@ -81,8 +81,10 @@
     height: 100%;
     object-fit: contain;
     object-position: center;
-    filter: brightness(0) invert(1);
-    opacity: 0.9;
+    filter: brightness(0) invert(1) contrast(1.2);
+    opacity: 0.95;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
 }
 
 /* Add AI-themed glow effect */
