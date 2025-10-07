@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/westernai-website/static/css/main.4ec58904.css",
+    "main.js": "/westernai-website/static/js/main.f8c93675.js",
+    "static/media/ainnovation-logo-colour.png": "/westernai-website/static/media/ainnovation-logo-colour.9f6e6c8e5ca5355473c1.png",
+    "static/media/pub_icon.png": "/westernai-website/static/media/pub_icon.d848b06cb72a4a2b419a.png",
+    "static/media/comms_icon.png": "/westernai-website/static/media/comms_icon.16755f6eaa35902f5084.png",
+    "static/media/proj_icon.png": "/westernai-website/static/media/proj_icon.5fa25468e6a90b8571a2.png",
+    "static/media/pres_icon.png": "/westernai-website/static/media/pres_icon.f7406dfd75cd918017b1.png",
+    "static/media/dev_icon.png": "/westernai-website/static/media/dev_icon.cb96a7d2d31ea1463ad8.png",
+    "static/media/finance_icon.png": "/westernai-website/static/media/finance_icon.72a82023244709b5c023.png",
+    "static/media/hacks_icon.png": "/westernai-website/static/media/hacks_icon.ac49e3f45c5734055b3e.png",
+    "static/media/design_icon.png": "/westernai-website/static/media/design_icon.8c48f0186c68ae939227.png",
+    "static/media/flag_icon.png": "/westernai-website/static/media/flag_icon.857a713a7bceb7d8dc20.png",
+    "static/media/edu_icon.png": "/westernai-website/static/media/edu_icon.f6e3ecd75523ab03dc70.png",
+    "static/media/discord.png": "/westernai-website/static/media/discord.578c1f738924817cb1fb.png",
+    "static/media/instagram.png": "/westernai-website/static/media/instagram.2602e991b7214256b503.png",
+    "index.html": "/westernai-website/index.html",
+    "main.4ec58904.css.map": "/westernai-website/static/css/main.4ec58904.css.map",
+    "main.f8c93675.js.map": "/westernai-website/static/js/main.f8c93675.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4ec58904.css",
+    "static/js/main.f8c93675.js"
+  ]
+}
