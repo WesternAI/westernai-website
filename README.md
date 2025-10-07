@@ -140,9 +140,11 @@ The website is optimized for performance with:
 
 This project is licensed under the MIT License.
 
-## 👥 Team
+## 👥 Credits
 
-Built by the Western AI Communications Team for the Western Artificial Intelligence Club.
+**Built by Peter MF Bai** for the Western Artificial Intelligence Club.
+
+*This website was developed with the assistance of Claude AI (Anthropic) for code generation and implementation.*
 
 ## 🔗 Links
 
