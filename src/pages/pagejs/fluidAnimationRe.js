@@ -31,7 +31,7 @@ const initializeFluid = () => {
 
     
     
-    var resolution = 10; //Width and height of each cell in the grid.
+    var resolution = 14; //Width and height of each cell in the grid. Increased for performance.
     
     var pen_size = 40; //Radius around the mouse cursor coordinates to reach when stirring
 
@@ -40,7 +40,7 @@ const initializeFluid = () => {
 
     console.log(num_cols, num_rows)
 
-    var speck_count = 800; //This determines how many particles will be made. Reduced for performance.
+    var speck_count = 400; //This determines how many particles will be made. Further reduced for performance.
     
     var vec_cells = []; //The array that will contain the grid cells
     var particles = []; //The array that will contain the particles
@@ -210,6 +210,12 @@ const initializeFluid = () => {
             rafId = requestAnimationFrame(loop);
         }
 
+        // Respect prefers-reduced-motion: don't animate for users/devices that prefer less motion.
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        if (prefersReducedMotion.matches) {
+            // Skip starting the loop to reduce CPU/GPU usage on low-power devices
+            return;
+        }
         rafId = requestAnimationFrame(loop);
     }
 
