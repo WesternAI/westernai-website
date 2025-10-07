@@ -81,13 +81,6 @@
     height: 100%;
     object-fit: contain;
     object-position: center;
-    filter: brightness(0) invert(1);
-    opacity: 0.9;
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-    border-radius: 2px;
-    padding: 2px;
-    box-sizing: border-box;
 }
 
 /* Add AI-themed glow effect */
