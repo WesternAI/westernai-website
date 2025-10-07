@@ -136,15 +136,9 @@ The website is optimized for performance with:
 4. Test thoroughly
 5. Submit a pull request
 
-## 📄 License
+## 👥 Team
 
-This project is licensed under the MIT License.
-
-## 👥 Credits
-
-**Built by Peter MF Bai** for the Western Artificial Intelligence Club.
-
-*This website was developed with the assistance of Claude AI (Anthropic) for code generation and implementation.*
+Built by Claude Code while getting yelled at by Peter Bai for the Western Artificial Intelligence Club.
 
 ## 🔗 Links
 
