@@ -17,25 +17,31 @@ const NavigationBar = () => {
     ];
 
     useEffect(() => {
+        let ticking = false;
+
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
-            
-            // Update active section based on scroll position
-            const sections = document.querySelectorAll('section[id]');
-            let current = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (window.scrollY >= (sectionTop - 200)) {
-                    current = section.getAttribute('id');
-                }
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(() => {
+                setIsScrolled(window.scrollY > 50);
+
+                // Update active section based on scroll position
+                const sections = document.querySelectorAll('section[id]');
+                let current = '';
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (window.scrollY >= (sectionTop - 200)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                setActiveSection(current);
+                ticking = false;
             });
-            
-            setActiveSection(current);
         };
 
-        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 

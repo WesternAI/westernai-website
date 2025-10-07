@@ -40,7 +40,7 @@ const initializeFluid = () => {
 
     console.log(num_cols, num_rows)
 
-    var speck_count = 5000 / 2; //This determines how many particles will be made.
+    var speck_count = 800; //This determines how many particles will be made. Reduced for performance.
     
     var vec_cells = []; //The array that will contain the grid cells
     var particles = []; //The array that will contain the particles
@@ -192,9 +192,25 @@ const initializeFluid = () => {
         canvas.addEventListener("mousemove", mouse_move_handler);
         canvas.addEventListener("touchmove", touch_move_handler);
 
-        //When the page is finished loading, run the draw() function.
-        // run at 60 frames per second
-        setInterval(draw, 1000 / 500);
+        //When the page is finished loading, run the draw() function using requestAnimationFrame.
+        // Cap to ~60fps with a simple time accumulator to avoid excessive work.
+        let rafId = null;
+        let lastTs = 0;
+        const targetFrameMs = 1000 / 60;
+
+        function loop(ts) {
+            if (document.hidden) {
+                rafId = requestAnimationFrame(loop);
+                return;
+            }
+            if (lastTs === 0 || ts - lastTs >= targetFrameMs) {
+                lastTs = ts;
+                draw();
+            }
+            rafId = requestAnimationFrame(loop);
+        }
+
+        rafId = requestAnimationFrame(loop);
     }
 
   
@@ -344,15 +360,9 @@ const initializeFluid = () => {
         var mouse_xv = mouse.x - mouse.px;
         var mouse_yv = mouse.y - mouse.py;
 
-        canvas_height = canvas.getBoundingClientRect().height;
-        canvas_width = canvas.getBoundingClientRect().width;
-        
-        canvas_height -= canvas_height % resolution;
-        canvas_width -= canvas_width % resolution;
-
-        canvas.height = canvas_height;
-        canvas.width = canvas_width;
-
+        // Keep canvas size fixed (set in init) to avoid layout thrash every frame.
+        canvas_height = canvas.height;
+        canvas_width = canvas.width;
         num_cols = canvas_width / resolution;
         num_rows = canvas_height / resolution;
         

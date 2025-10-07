@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import '../css/Landing.css';
 
 const Landing = () => {
@@ -7,11 +7,11 @@ const Landing = () => {
     const [textIndex, setTextIndex] = useState(0);
     const [isVisible, setIsVisible] = useState(false);
 
-    const texts = [
+    const texts = useMemo(() => ([
         'western.ai',
         'innovation',
         'the future'
-    ];
+    ]), []);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -57,7 +57,7 @@ const Landing = () => {
         <section id="landing" className="landing">
             <div className="landing-background">
                 <div className="landing-particles">
-                    {[...Array(50)].map((_, i) => (
+                    {useMemo(() => [...Array(50)].map((_, i) => (
                         <div
                             key={i}
                             className="particle"
@@ -67,7 +67,7 @@ const Landing = () => {
                                 animationDuration: `${3 + Math.random() * 4}s`
                             }}
                         />
-                    ))}
+                    )), [])}
                 </div>
             </div>
 
