@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/westernai-website/static/css/main.4ec58904.css",
-    "main.js": "/westernai-website/static/js/main.ee110dde.js",
+    "main.js": "/westernai-website/static/js/main.f8c93675.js",
     "static/media/ainnovation-logo-colour.png": "/westernai-website/static/media/ainnovation-logo-colour.9f6e6c8e5ca5355473c1.png",
     "static/media/pub_icon.png": "/westernai-website/static/media/pub_icon.d848b06cb72a4a2b419a.png",
     "static/media/comms_icon.png": "/westernai-website/static/media/comms_icon.16755f6eaa35902f5084.png",
@@ -17,10 +17,10 @@
     "static/media/instagram.png": "/westernai-website/static/media/instagram.2602e991b7214256b503.png",
     "index.html": "/westernai-website/index.html",
     "main.4ec58904.css.map": "/westernai-website/static/css/main.4ec58904.css.map",
-    "main.ee110dde.js.map": "/westernai-website/static/js/main.ee110dde.js.map"
+    "main.f8c93675.js.map": "/westernai-website/static/js/main.f8c93675.js.map"
   },
   "entrypoints": [
     "static/css/main.4ec58904.css",
-    "static/js/main.ee110dde.js"
+    "static/js/main.f8c93675.js"
   ]
 }
