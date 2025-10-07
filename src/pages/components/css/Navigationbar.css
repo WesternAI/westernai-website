@@ -81,6 +81,9 @@
     height: 100%;
     object-fit: contain;
     object-position: center;
+    border-radius: 50%;
+    overflow: hidden;
+    transform: scale(0.95);
 }
 
 /* Add AI-themed glow effect */
